@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nexova, ton espace personnel pour organiser tes tâches et rester concentré.">
+    <title>Nexova — Organise ton univers</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <a href="#" class="logo">NEXOVA<span>.</span></a>
+
+        <nav id="navigation">
+            <a href="#accueil">Accueil</a>
+            <a href="#outils">Outils</a>
+            <a href="#apropos">À propos</a>
+        </nav>
+
+        <a href="#outils" class="btn btn-small">Commencer</a>
+    </header>
+
+    <main>
+        <section class="hero" id="accueil">
+            <div class="hero-content">
+                <span class="eyebrow">TON ESPACE. TON RYTHME.</span>
+                <h1>Donne vie à tes<br><span>ambitions.</span></h1>
+                <p>
+                    Organise tes journées, développe tes habitudes
+                    et concentre-toi sur ce qui compte vraiment.
+                </p>
+                <a href="#outils" class="btn">Découvrir Nexova ↗</a>
+            </div>
+
+            <div class="hero-card">
+                <span class="card-label">TON ESPACE DE TRAVAIL</span>
+                <h3>Une nouvelle journée.</h3>
+                <p>Chaque petit pas compte.</p>
+                <div class="progress-info">
+                    <span>Progression quotidienne</span>
+                    <strong id="heroProgress">0%</strong>
+                </div>
+                <div class="progress-bar">
+                    <div id="heroProgressBar"></div>
+                </div>
+                <div class="mini-stats">
+                    <div><strong id="heroTasks">0</strong><span>Tâches terminées</span></div>
+                    <div><strong>25 min</strong><span>Focus recommandé</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="outils">
+            <div class="section-heading">
+                <span class="eyebrow">TON ESPACE PERSONNEL</span>
+                <h2>Tout ce qu'il te faut.</h2>
+                <p>Des outils simples pour avancer chaque jour.</p>
+            </div>
+
+            <div class="tools-grid">
+                <article class="tool-card">
+                    <span class="tool-icon">✓</span>
+                    <h3>Mes tâches</h3>
+                    <p>Note tes objectifs et coche-les au fur et à mesure.</p>
+
+                    <form id="taskForm" class="inline-form">
+                        <input id="taskInput" type="text"
+                            placeholder="Ajouter une tâche..."
+                            maxlength="120" required>
+                        <button class="btn" type="submit">+</button>
+                    </form>
+
+                    <ul id="taskList" class="task-list"></ul>
+                    <p id="taskSummary" class="muted">0 tâche terminée</p>
+                </article>
+
+                <article class="tool-card focus-card">
+                    <span class="tool-icon">◷</span>
+                    <h3>Mode concentration</h3>
+                    <p>Travaille par sessions pour garder ton attention.</p>
+
+                    <div class="timer" id="timerDisplay">25:00</div>
+                    <div class="timer-modes">
+                        <button class="mode active" data-minutes="25">Focus</button>
+                        <button class="mode" data-minutes="15">Court</button>
+                        <button class="mode" data-minutes="5">Pause</button>
+                    </div>
+                    <div class="timer-actions">
+                        <button class="btn" id="timerToggle">Démarrer</button>
+                        <button class="btn btn-secondary" id="timerReset">Réinitialiser</button>
+                    </div>
+                    <p id="timerStatus" class="muted">Prêt quand tu l'es.</p>
+                </article>
+
+                <article class="tool-card">
+                    <span class="tool-icon">✎</span>
+                    <h3>Mon carnet</h3>
+                    <p>Garde tes idées importantes au même endroit.</p>
+
+                    <textarea id="notesInput"
+                        placeholder="Écris tes idées ici..."
+                        rows="6"></textarea>
+                    <div class="notes-footer">
+                        <span id="notesStatus" class="muted">Sauvegarde automatique</span>
+                        <button id="clearNotes" class="text-button">Effacer</button>
+                    </div>
+                </article>
+
+                <article class="tool-card">
+                    <span class="tool-icon">✦</span>
+                    <h3>Mes habitudes</h3>
+                    <p>Les petites actions créent les grandes différences.</p>
+
+                    <div class="habit-list">
+                        <label><input type="checkbox" data-habit="lecture"> Lire quelques pages</label>
+                        <label><input type="checkbox" data-habit="sport"> Bouger un peu</label>
+                        <label><input type="checkbox" data-habit="eau"> Boire suffisamment d'eau</label>
+                        <label><input type="checkbox" data-habit="plan"> Préparer demain</label>
+                    </div>
+                    <p id="habitSummary" class="muted">0 habitude sur 4 accomplie</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="quote-section" id="apropos">
+            <span class="eyebrow">UN JOUR À LA FOIS</span>
+            <h2>La régularité bat<br><span>la perfection.</span></h2>
+            <p>Avance à ton rythme. L'important, c'est de continuer.</p>
+        </section>
+
+        <section class="faq section">
+            <div class="section-heading">
+                <span class="eyebrow">QUESTIONS FRÉQUENTES</span>
+                <h2>Besoin d'en savoir plus ?</h2>
+            </div>
+
+            <details>
+                <summary>Mes tâches et mes notes sont-elles sauvegardées ?</summary>
+                <p>Oui, dans le stockage local de ton navigateur sur cet appareil.</p>
+            </details>
+            <details>
+                <summary>Dois-je créer un compte ?</summary>
+                <p>Non. Cette version fonctionne sans compte ni inscription.</p>
+            </details>
+            <details>
+                <summary>Puis-je utiliser Nexova sur téléphone ?</summary>
+                <p>Oui, l'interface s'adapte aux petits écrans.</p>
+            </details>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="#" class="logo">NEXOVA<span>.</span></a>
+        <p>Conçu pour avancer, un jour à la fois.</p>
+        <span>© <span id="currentYear"></span> Nexova</span>
+    </footer>
+</body>
+</html>
